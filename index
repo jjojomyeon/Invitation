@@ -4,14 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Solana Keene's 1st Birthday & Christening</title>
+    
     <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- External Custom Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Tailwind Custom Config -->
     <script>
         tailwind.config = {
             theme: {
@@ -39,45 +47,6 @@
             }
         }
     </script>
-    <style>
-        /* Floating background petals effect */
-        .petal {
-            position: absolute;
-            background: linear-gradient(135deg, #FFCCD5, #FFEBEF);
-            border-radius: 150% 0 150% 0;
-            opacity: 0.6;
-            pointer-events: none;
-            animation: float 12s infinite linear;
-        }
-
-        @keyframes float {
-            0% {
-                transform: translateY(105vh) rotate(0deg);
-                opacity: 0.7;
-            }
-            100% {
-                transform: translateY(-10vh) rotate(360deg);
-                opacity: 0;
-            }
-        }
-
-        /* Subtle glow effects */
-        .gold-border-glow {
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.25);
-        }
-
-        /* Glassmorphism styling */
-        .glass-card {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 204, 213, 0.5);
-        }
-
-        /* Smooth Scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-    </style>
 </head>
 <body class="bg-pastel-50 text-pastel-dark font-sans min-h-screen relative overflow-x-hidden">
 
@@ -263,7 +232,7 @@
             <h3 class="font-serif text-2xl md:text-3xl font-bold text-pastel-dark mb-2">Venue Location</h3>
             <p class="text-sm text-gray-600 mb-6">Festival Mall Alabang • Filinvest City, Muntinlupa</p>
             
-            <!-- Map Embed Placeholder / Container -->
+            <!-- Map Embed Container -->
             <div class="w-full h-64 md:h-80 bg-pastel-100 rounded-2xl overflow-hidden shadow-inner relative border border-pastel-200">
                 <iframe 
                     title="Festival Mall Alabang Location"
@@ -369,7 +338,7 @@
         </div>
     </section>
 
-    <!-- RSVP Form Section Persisted in Memory -->
+    <!-- RSVP Form Section -->
     <section id="rsvp" class="py-16 px-4 max-w-2xl mx-auto relative z-10">
         <div class="glass-card rounded-3xl p-8 md:p-10 shadow-xl border-2 border-pastel-200 relative overflow-hidden">
             <div class="absolute -top-12 -right-12 w-32 h-32 bg-pastel-200/50 rounded-full blur-2xl"></div>
@@ -439,7 +408,6 @@
         </div>
 
         <div id="wishesContainer" class="grid sm:grid-cols-2 gap-4">
-            <!-- Dynamic Wishes will append here -->
             <div class="glass-card p-5 rounded-2xl border border-pastel-200 shadow-sm">
                 <div class="flex justify-between items-start mb-2">
                     <h4 class="font-serif font-bold text-pastel-dark">Ninang Sarah</h4>
@@ -465,98 +433,7 @@
         <p class="text-[11px] text-pastel-rose/70 mt-4">Made with ♥ for Solana's Big Day</p>
     </footer>
 
-    <!-- JavaScript Interactions -->
-    <script>
-        // Initialize Lucide Icons
-        lucide.createIcons();
-
-        // 1. Floating Petals Animation
-        const petalsContainer = document.getElementById('petals-container');
-        const petalCount = 15;
-
-        for (let i = 0; i < petalCount; i++) {
-            const petal = document.createElement('div');
-            petal.className = 'petal';
-            const size = Math.random() * 15 + 10; // 10px to 25px
-            petal.style.width = `${size}px`;
-            petal.style.height = `${size}px`;
-            petal.style.left = `${Math.random() * 100}vw`;
-            petal.style.animationDuration = `${Math.random() * 6 + 8}s`; // 8s to 14s
-            petal.style.animationDelay = `${Math.random() * 5}s`;
-            petalsContainer.appendChild(petal);
-        }
-
-        // 2. Countdown Timer Target: November 11, 2026
-        const targetDate = new Date('November 11, 2026 10:00:00').getTime();
-
-        function updateCountdown() {
-            const now = new Date().getTime();
-            const difference = targetDate - now;
-
-            if (difference > 0) {
-                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-
-                document.getElementById('cd-days').innerText = days < 10 ? '0' + days : days;
-                document.getElementById('cd-hours').innerText = hours < 10 ? '0' + hours : hours;
-                document.getElementById('cd-minutes').innerText = minutes < 10 ? '0' + minutes : minutes;
-                document.getElementById('cd-seconds').innerText = seconds < 10 ? '0' + seconds : seconds;
-            } else {
-                document.getElementById('cd-days').innerText = '00';
-                document.getElementById('cd-hours').innerText = '00';
-                document.getElementById('cd-minutes').innerText = '00';
-                document.getElementById('cd-seconds').innerText = '00';
-            }
-        }
-        setInterval(updateCountdown, 1000);
-        updateCountdown();
-
-        // 3. In-Memory RSVP Handling & Wish Board Update
-        function handleRSVP(e) {
-            e.preventDefault();
-            const name = document.getElementById('guestName').value;
-            const attendance = document.getElementById('attendance').value;
-            const message = document.getElementById('guestMessage').value;
-
-            // Show success state
-            document.getElementById('rsvpForm').classList.add('hidden');
-            document.getElementById('rsvpSuccess').classList.remove('hidden');
-
-            // If guest left a message, add it to wishes section live
-            if (message && message.trim() !== "") {
-                const wishesContainer = document.getElementById('wishesContainer');
-                const wishCard = document.createElement('div');
-                wishCard.className = 'glass-card p-5 rounded-2xl border border-pastel-200 shadow-sm transition-all duration-500 transform translate-y-2';
-                wishCard.innerHTML = `
-                    <div class="flex justify-between items-start mb-2">
-                        <h4 class="font-serif font-bold text-pastel-dark">${escapeHtml(name)}</h4>
-                        <span class="text-[10px] text-pastel-rose font-medium bg-pastel-100 px-2 py-0.5 rounded-full">${attendance === 'Joyfully Accepts' ? 'Attending' : 'Guest'}</span>
-                    </div>
-                    <p class="text-xs text-gray-600 italic">"${escapeHtml(message)}"</p>
-                `;
-                wishesContainer.prepend(wishCard);
-            }
-        }
-
-        function resetRSVPForm() {
-            document.getElementById('rsvpForm').reset();
-            document.getElementById('rsvpForm').classList.remove('hidden');
-            document.getElementById('rsvpSuccess').classList.add('hidden');
-        }
-
-        function escapeHtml(text) {
-            return text.replace(/[&<>"']/g, function(m) {
-                return {
-                    '&': '&amp;',
-                    '<': '&lt;',
-                    '>': '&gt;',
-                    '"': '&quot;',
-                    "'": '&#039;'
-                }[m];
-            });
-        }
-    </script>
+    <!-- External JavaScript File -->
+    <script src="script.js"></script>
 </body>
 </html>
