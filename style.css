@@ -1,0 +1,38 @@
+/* Floating background petals effect */
+.petal {
+    position: absolute;
+    background: linear-gradient(135deg, #FFCCD5, #FFEBEF);
+    border-radius: 150% 0 150% 0;
+    opacity: 0.6;
+    pointer-events: none;
+    animation: float 12s infinite linear;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(105vh) rotate(0deg);
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(-10vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Subtle glow effects */
+.gold-border-glow {
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.25);
+}
+
+/* Glassmorphism styling */
+.glass-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 204, 213, 0.5);
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
