@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solana Keene's Birthday & Christening</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- Root Variables & Soft Pastel Palette --- */
+        :root {
+            --pastel-pink-light: #FFF0F3;
+            --pastel-pink-main: #FFCCD5;
+            --pastel-pink-accent: #FFB3C1;
+            --pastel-rose: #C9184A;
+            --text-color: #594A4E;
+            --white: #FFFFFF;
+            --shadow: 0 10px 30px rgba(255, 179, 193, 0.3);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--pastel-pink-light);
+            color: var(--text-color);
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        /* --- Header / Hero Section --- */
+        header {
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            background: linear-gradient(180deg, #FFFFFF 0%, var(--pastel-pink-light) 100%);
+            position: relative;
+        }
+
+        .subtitle {
+            font-size: 0.95rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #8C7A7E;
+            margin-bottom: 1rem;
+        }
+
+        h1.name {
+            font-family: 'Great Vibes', cursive;
+            font-size: 4rem;
+            color: var(--pastel-rose);
+            margin-bottom: 0.5rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+        }
+
+        .event-tag {
+            font-size: 1.2rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+        }
+
+        /* --- Countdown Timer --- */
+        .countdown-container {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .time-box {
+            background: var(--white);
+            padding: 1rem;
+            border-radius: 12px;
+            min-width: 75px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--pastel-pink-main);
+        }
+
+        .time-box span {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--pastel-rose);
+        }
+
+        .time-box label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* --- Content Sections --- */
+        section {
+            max-width: 650px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 2.5rem 1.5rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            border: 2px solid #FFF;
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.5rem;
+            color: var(--pastel-rose);
+            margin-bottom: 1rem;
+        }
+
+        .details-item {
+            margin: 1.5rem 0;
+        }
+
+        .details-item strong {
+            display: block;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #8C7A7E;
+            margin-bottom: 0.25rem;
+        }
+
+        .details-item p {
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        /* --- RSVP Form --- */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            text-align: left;
+        }
+
+        label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid var(--pastel-pink-accent);
+            border-radius: 8px;
+            font-family: inherit;
+            background-color: var(--pastel-pink-light);
+            color: var(--text-color);
+            outline: none;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: var(--pastel-rose);
+            background-color: var(--white);
+        }
+
+        button {
+            background-color: var(--pastel-pink-accent);
+            color: var(--white);
+            border: none;
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            margin-top: 0.5rem;
+        }
+
+        button:hover {
+            background-color: var(--pastel-rose);
+        }
+
+        /* --- Footer --- */
+        footer {
+            padding: 2rem;
+            font-size: 0.85rem;
+            color: #8C7A7E;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 480px) {
+            h1.name { font-size: 3rem; }
+            .countdown-container { gap: 0.5rem; }
+            .time-box { min-width: 60px; padding: 0.5rem; }
+            .time-box span { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Header -->
+    <header>
+        <p class="subtitle">You are cordially invited to celebrate</p>
+        <h1 class="name">Solana Keene</h1>
+        <p class="subtitle">M. Carlos</p>
+        <p class="event-tag">1st Birthday & Holy Baptism</p>
+
+        <!-- Countdown -->
+        <div class="countdown-container">
+            <div class="time-box"><span id="days">00</span><label>Days</label></div>
+            <div class="time-box"><span id="hours">00</span><label>Hours</label></div>
+            <div class="time-box"><span id="minutes">00</span><label>Mins</label></div>
+            <div class="time-box"><span id="seconds">00</span><label>Secs</label></div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Event Details Card -->
+        <section>
+            <div class="card">
+                <h2>Event Details</h2>
+                <hr style="border: none; border-top: 1px solid var(--pastel-pink-main); width: 50%; margin: 0 auto 1.5rem auto;">
+
+                <div class="details-item">
+                    <strong>Date & Time</strong>
+                    <p>Wednesday, November 11, 2026</p>
+                    <p style="font-size: 0.95rem; font-weight: normal; color: #666;">Time: To be announced</p>
+                </div>
+
+                <div class="details-item">
+                    <strong>Venue</strong>
+                    <p>Festival Mall, Alabang</p>
+                    <p style="font-size: 0.95rem; font-weight: normal; color: #666;">Muntinlupa City, Metro Manila</p>
+                </div>
+
+                <div class="details-item">
+                    <strong>Attire Motif</strong>
+                    <p>Shades of Pastel Pink & White</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- RSVP Form Section -->
+        <section>
+            <div class="card">
+                <h2>R.S.V.P.</h2>
+                <p style="font-size: 0.9rem; margin-bottom: 1.5rem;">Please let us know if you can make it to our little princess's special day!</p>
+                
+                <form id="rsvp-form">
+                    <div>
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" required placeholder="Enter your full name">
+                    </div>
+
+                    <div>
+                        <label for="attendance">Will you attend?</label>
+                        <select id="attendance" required>
+                            <option value="" disabled selected>Select an option</option>
+                            <option value="yes">Joyfully Accepts</option>
+                            <option value="no">Regretfully Declines</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="guests">Number of Guests</label>
+                        <input type="number" id="guests" min="1" max="5" value="1">
+                    </div>
+
+                    <div>
+                        <label for="message">Message for Solana</label>
+                        <textarea id="message" rows="3" placeholder="Leave a sweet note for the birthday celebrant..."></textarea>
+                    </div>
+
+                    <button type="submit">Send RSVP</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>We can't wait to celebrate with you!</p>
+        <p style="margin-top: 0.5rem; font-size: 0.75rem;">© 2026 Solana Keene M. Carlos</p>
+    </footer>
+
+    <!-- Countdown & Form Script -->
+    <script>
+        // Set the Target Event Date
+        const eventDate = new Date("November 11, 2026 00:00:00").getTime();
+
+        const updateTimer = () => {
+            const now = new Date().getTime();
+            const difference = eventDate - now;
+
+            if (difference > 0) {
+                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+                document.getElementById('days').innerText = days.toString().padStart(2, '0');
+                document.getElementById('hours').innerText = hours.toString().padStart(2, '0');
+                document.getElementById('minutes').innerText = minutes.toString().padStart(2, '0');
+                document.getElementById('seconds').innerText = seconds.toString().padStart(2, '0');
+            } else {
+                document.querySelector('.countdown-container').innerHTML = "<p>The Special Day is Here!</p>";
+            }
+        };
+
+        setInterval(updateTimer, 1000);
+        updateTimer();
+
+        // Simple Form Submission Alert
+        document.getElementById('rsvp-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert("Thank you for your RSVP! We have received your response.");
+            this.reset();
+        });
+    </script>
+</body>
+</html>
